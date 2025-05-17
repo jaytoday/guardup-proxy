@@ -1,0 +1,22 @@
+{
+  "name": "guardup-proxy",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon --watch './' --ext ts --exec ts-node server.ts",
+    "build": "tsc",
+    "start": "cross-env NODE_ENV=production node dist/server.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.16",
+    "@types/node": "^20",
+    "@types/node-fetch": "^2.6.12",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
