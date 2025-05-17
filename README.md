@@ -1,8 +1,17 @@
-# GuardUp Proxy Service
+# GuardUp Proxy
 
-[![GuardUp](https://guardup.ai/logo.svg)](https://guardup.ai)
+[www.guardup.ai](https://guardup.ai)
 
-GuardUp Proxy Service is a privacy-focused proxy server that adds multi-factor authentication and enhanced security to MCP (Model Context Protocol) servers. It acts as a secure intermediary between MCP clients and servers, ensuring that only authorized users can access protected MCP resources.
+GuardUp Proxy is a privacy-focused proxy server that adds multi-factor authentication and enhanced security to MCP (Model Context Protocol) servers. It acts as a secure intermediary between MCP clients and servers, ensuring that only authorized users can access protected MCP resources.
+
+## About Model Context Protocol
+
+[Learn more about Model Context Protocol at the official website](https://modelcontextprotocol.io/introduction)
+
+
+<img width="725" alt="mcp_overview" src="https://github.com/user-attachments/assets/4b54b05d-7b59-4c36-8337-3d270b40cfc3" />
+
+
 
 ## 🔒 Privacy First
 
@@ -58,9 +67,9 @@ pnpm start
 
 ## 🌐 Self-Hosting Guide
 
-### 1. Deploying the Proxy Service
+### 1. Deploying GuardUp Proxy
 
-You can deploy the GuardUp Proxy Service to any Node.js-compatible hosting platform. Here's a basic guide for deployment:
+You can deploy GuardUp Proxy to any Node.js-compatible hosting platform. Here's a basic guide for deployment:
 
 1. Set up a server with Node.js 18+ installed
 2. Clone this repository
@@ -96,7 +105,7 @@ Make sure to:
 2. Configure your DNS to accept wildcard subdomains (`*.your-domain.com`)
 3. Set up SSL/TLS certificates (highly recommended)
 
-### 3. Updating GuardUp Web App
+### 3. Updating Your GuardUp Account
 
 After deploying your proxy server:
 
