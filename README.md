@@ -31,8 +31,8 @@ GuardUp is designed with privacy as a core principle:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/guardup/guardup-proxy-service.git
-   cd guardup-proxy-service
+   git clone https://github.com/guardup/guardup-proxy.git
+   cd guardup-proxy
    ```
 
 2. Install dependencies:
