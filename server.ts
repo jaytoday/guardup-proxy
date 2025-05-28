@@ -4,8 +4,6 @@ import { parse } from 'url';
 import httpProxy, { ServerOptions } from 'http-proxy';
 import { PassThrough } from 'stream';
 
-// Toggle this to turn on/off the “peek JSON-RPC method” logging and intent-based auth
-const USE_PEEK_INTENT = true;
 
 /**
  * Configuration constants for the proxy server
@@ -197,8 +195,7 @@ const handleRequest = async (
 
     res.on('close', () => clearTimeout(requestTimeout));
 
-    if (req.method === 'POST' && USE_PEEK_INTENT) {
-      console.log('--> PEEK_INTENT enabled');
+    if (req.method === 'POST') {
 
       const proxyReqStream = new PassThrough();
       const peekStream     = new PassThrough();
