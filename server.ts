@@ -96,13 +96,7 @@ const createProxyServer = (): httpProxy => {
     ssl: {
       rejectUnauthorized: process.env.NODE_ENV === 'production',
     },
-    agent: new http.Agent({
-      keepAlive:      true,
-      keepAliveMsecs: 60000,
-      maxSockets:     100,
-      maxFreeSockets: 10,
-      timeout:        60000,
-    }),
+    // agent removed from global proxyOptions; now set per-request in handleRequest
   };
 
   const proxy = httpProxy.createProxyServer(proxyOptions);
