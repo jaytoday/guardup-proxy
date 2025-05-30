@@ -165,10 +165,18 @@ const handleRequest = async (
     const { url: targetUrl, requireAuth } = await fetchServerData(proxyId);
     console.log('Resolved target URL:', targetUrl, 'requireAuth=', requireAuth);
 
-    // rewrite the request URL to point at the target
+    // rewrite the request URL to point at the target, avoiding duplicate segments
     const { pathname, search } = parse(req.url || '/', true);
     const target = new URL(targetUrl);
-    req.url = `${target.pathname.replace(/\/+$/, '')}${pathname}${search || ''}`;
+    function joinUrlPaths(a: string, b: string) {
+      if (a.endsWith('/')) a = a.slice(0, -1);
+      if (b.startsWith('/')) b = b.slice(1);
+      if (!a && !b) return '/';
+      if (!a) return '/' + b;
+      if (!b) return a || '/';
+      return a + '/' + b;
+    }
+    req.url = joinUrlPaths(target.pathname, pathname || '') + (search || '');
 
     // choose the right agent
     const agent = target.protocol === 'https:'
